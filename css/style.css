@@ -120,7 +120,7 @@ body{
 
 .about {
   padding: 80px 0;
-  background: #b6f4ee;
+  background: #d6e8f9;
 }
 
 .container {
@@ -157,6 +157,7 @@ body{
 
 .values {
   padding: 80px 0;
+  background: #d6e8f9;
 }
 
 .section-header {
@@ -205,13 +206,79 @@ body{
 }
 
 .card-overlay h3 {
-  color: rgb(218, 249, 249);
+  color: rgb(250, 254, 254);
   font-size: 1.1rem;
   margin-bottom: 8px;
 }
 
 .card-overlay p {
-  color: rgba(255,255,255,0.85);
+  color: rgb(255, 255, 255);
   font-size: 0.88rem;
   line-height: 1.6;
+}
+
+.destinations {
+  padding: 80px 0;
+  background: #d6e8f9;
+}
+
+.dest-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.dest-card {
+  border-radius: 14px;
+  overflow: hidden;
+  height: 260px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  transition: transform 0.3s;
+}
+
+.dest-card:hover {
+  transform: translateY(-6px);
+}
+
+.dest-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.80) 0%, rgba(0,0,0,0.1) 100%);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.dest-overlay h3 {
+  color: rgb(255, 255, 255);
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+}
+
+.dest-overlay p {
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 14px;
+}
+
+.dest-overlay strong {
+  color: var(--accent);
+}
+
+.btn-dest {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--dark);
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-decoration: none;
+  align-self: flex-start;
+}
+
+.btn-dest:hover {
+  background: #d97706;
 }
