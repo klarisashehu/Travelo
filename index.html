@@ -8,12 +8,13 @@
 </head>
 <body>
 
-  <nav class="navbar">
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
     <div class="nav-container">
       <a href="#" class="logo">
-  <img src="logo-dark.svg" alt="Travelo" class="logo-img" />
-</a>
-      <ul class="nav-links">
+        <img src="logo-dark.svg" alt="Travelo" class="logo-img" />
+      </a>
+      <ul class="nav-links" id="navLinks">
         <li><a href="#about">Rreth Nesh</a></li>
         <li><a href="#destinations">Destinacione</a></li>
         <li><a href="#contact">Kontakt</a></li>
@@ -22,6 +23,7 @@
     </div>
   </nav>
 
+  <!-- HERO -->
   <section class="hero">
     <div class="hero-overlay"></div>
     <div class="hero-content">
@@ -31,168 +33,200 @@
     </div>
   </section>
 
+  <!-- ABOUT -->
   <section class="about" id="about">
     <div class="container">
       <div class="about-grid">
-
         <div class="about-text">
           <h2>Më shumë se një agjenci turistike</h2>
           <p>Travelo është partneri yt i besuar për çdo udhëtim. Qoftë në kërkim të pushimeve relaksuese, aventurave ekstreme apo udhëtimeve kulturore – ne jemi këtu për ta kthyer çdo ide në realitet.</p>
           <a href="#contact" class="btn-primary">Na Kontakto</a>
         </div>
-
         <div class="about-image">
-          <img src="images/img.jpg" alt="Rreth Nesh"
-          class="about-img"/>
+          <img src="images/img.jpg" alt="Rreth Nesh" class="about-img" />
         </div>
-
       </div>
     </div>
   </section>
 
+  <!-- VALUES -->
   <section class="values" id="values">
     <div class="container">
-        <div class="section-header">
-            <h2>Vlerat Tona</h2>
-            <p>Çdo gjë që bëjmë është ndërtuar mbi këto shtylla</p>
+      <div class="section-header">
+        <h2>Vlerat Tona</h2>
+        <p>Çdo gjë që bëjmë është ndërtuar mbi këto shtylla</p>
+      </div>
+      <div class="values-grid">
+        <div class="value-card" style="background-image: url('images/val1.jpg')">
+          <div class="card-overlay">
+            <h3>Planifikim pa Stres</h3>
+            <p>Nga biletat dhe akomodimi tek guidat lokale – ne kujdesemi për gjithçka.</p>
+          </div>
         </div>
-
-        <div class="values-gird">
-
-  <div class="value-card" style="background-image: url('images/val1.jpg')">
-    <div class="card-overlay">
-      <h3>Planifikim pa Stres</h3>
-      <p>Nga biletat dhe akomodimi tek guidat lokale – ne kujdesemi për gjithçka.</p>
+        <div class="value-card" style="background-image: url('images/val2.jpg')">
+          <div class="card-overlay">
+            <h3>Udhëtime të Personalizuara</h3>
+            <p>Çdo itinerar është unik, i ndërtuar sipas dëshirave dhe buxhetit tuaj.</p>
+          </div>
+        </div>
+        <div class="value-card" style="background-image: url('images/val3.jpg')">
+          <div class="card-overlay">
+            <h3>Partnerë të Zgjedhur</h3>
+            <p>Bashkëpunojmë vetëm me ofrues të besuar duke garantuar cilësi dhe siguri.</p>
+          </div>
+        </div>
+        <div class="value-card" style="background-image: url('images/val4.jpg')">
+          <div class="card-overlay">
+            <h3>Pasion për Zbulimin</h3>
+            <p>Ekipi ynë është i përbërë nga udhëtarë të pasionuar me rekomandime të vërteta.</p>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-
-  <div class="value-card" style="background-image: url('images/val2.jpg')">
-    <div class="card-overlay">
-      <h3>Udhëtime të Personalizuara</h3>
-      <p>Çdo itinerar është unik, i ndërtuar sipas dëshirave dhe buxhetit tuaj.</p>
-    </div>
-  </div>
-
-  <div class="value-card" style="background-image: url('images/val3.jpg')">
-    <div class="card-overlay">
-      <h3>Partnerë të Zgjedhur</h3>
-      <p>Bashkëpunojmë vetëm me ofrues të besuar duke garantuar cilësi dhe siguri.</p>
-    </div>
-  </div>
-
-  <div class="value-card" style="background-image: url('images/val4.jpg')">
-    <div class="card-overlay">
-      <h3>Pasion për Zbulimin</h3>
-      <p>Ekipi ynë është i përbërë nga udhëtarë të pasionuar me rekomandime të vërteta.</p>
-    </div>
-  </div>
-
-</div>
-
-            
   </section>
 
-  <section class ="destinations" id="destinations">
-  <div class="container">
+  <!-- DESTINATIONS -->
+  <section class="destinations" id="destinations">
+    <div class="container">
       <div class="section-header">
         <h2>Destinacione të Popullarizuara</h2>
         <p>Zgjidh destinacionin tuaj të ëndrrave</p>
       </div>
-      <div class="dest-grid">
-<div class="dest-slider">
-  <button class="slider-btn left" id="sliderLeft">&#8592;</button>
+      <div class="dest-slider">
+        <button class="slider-btn left" id="sliderLeft">&#8592;</button>
+        <div class="dest-track" id="destTrack">
 
-  <div class="dest-track" id="destTrack">
+          <div class="dest-card" style="background-image: url('images/dest1.jpg')"
+            data-title="Santorini, Greqi"
+            data-price="€499"
+            data-desc="Santorini është një nga ishujt më romantikë të botës. Me shtëpitë e bardha, kupat blu dhe perëndimet magjike, është destinacioni perfekt për çifte dhe aventurierë.">
+            <div class="dest-overlay">
+              <h3>Santorini, Greqi</h3>
+              <p>Nga <strong>€499</strong></p>
+              <button class="btn-dest open-modal">Shiko më shumë</button>
+            </div>
+          </div>
 
-    <div class="dest-card" style="background-image: url('images/dest1.jpg')">
-      <div class="dest-overlay">
-        <h3>Santorini, Greqi</h3>
-        <p>Nga <strong>€499</strong></p>
-        <a href="#contact" class="btn-dest">Rezervo</a>
+          <div class="dest-card" style="background-image: url('images/dest2.jpg')"
+            data-title="Romë, Itali"
+            data-price="€350"
+            data-desc="Roma është qyteti i historisë së pafund. Koloseu, Vatikani dhe udhët e ngushta të plota me restorantë e kafene e bëjnë një destinacion të paharrueshëm.">
+            <div class="dest-overlay">
+              <h3>Romë, Itali</h3>
+              <p>Nga <strong>€350</strong></p>
+              <button class="btn-dest open-modal">Shiko më shumë</button>
+            </div>
+          </div>
+
+          <div class="dest-card" style="background-image: url('images/dest3.jpg')"
+            data-title="Brazil"
+            data-price="€899"
+            data-desc="Brazili ofron natyrë të mahnitshme, plazhe tropikale dhe karnaval të famshëm. Rio de Janeiro dhe pylli Amazon janë eksperienca që nuk harrohen kurrë.">
+            <div class="dest-overlay">
+              <h3>Brazil</h3>
+              <p>Nga <strong>€899</strong></p>
+              <button class="btn-dest open-modal">Shiko më shumë</button>
+            </div>
+          </div>
+
+          <div class="dest-card" style="background-image: url('images/dest4.jpg')"
+            data-title="Maldive"
+            data-price="€999"
+            data-desc="Maldive është parajsa e vërteta tokësore. Bungalot mbi ujë, deti i kristaltë dhe rrisat e korales e bëjnë destinacionin ideal për pushime luksoze.">
+            <div class="dest-overlay">
+              <h3>Maldive</h3>
+              <p>Nga <strong>€999</strong></p>
+              <button class="btn-dest open-modal">Shiko më shumë</button>
+            </div>
+          </div>
+
+          <div class="dest-card" style="background-image: url('images/dest5.jpg')"
+            data-title="Dubai, EAB"
+            data-price="€799"
+            data-desc="Dubai është qyteti i të ardhmes – me ndërtesat më të larta, shoppingun më luksoz dhe shkretëtirën magjike. Një kombinim unik i traditës dhe modernitetit.">
+            <div class="dest-overlay">
+              <h3>Dubai, EAB</h3>
+              <p>Nga <strong>€799</strong></p>
+              <button class="btn-dest open-modal">Shiko më shumë</button>
+            </div>
+          </div>
+
+          <div class="dest-card" style="background-image: url('images/dest6.jpg')"
+            data-title="Bali, Indonezi"
+            data-price="€799"
+            data-desc="Bali është ishulli i perëndive. Tempujt e lashtë, orizet me terasa, plazhet dhe spa-t e famshme e bëjnë destinacionin perfekt për relaks dhe shpirtëror.">
+            <div class="dest-overlay">
+              <h3>Bali, Indonezi</h3>
+              <p>Nga <strong>€799</strong></p>
+              <button class="btn-dest open-modal">Shiko më shumë</button>
+            </div>
+          </div>
+
+          <div class="dest-card" style="background-image: url('images/dest7.jpg')"
+            data-title="Paris, Francë"
+            data-price="€449"
+            data-desc="Parisi, qyteti i dashurisë, ofron Kullën Eiffel, muzeumet botërore, modën dhe kuzhinën e shquar. Një destinacion i pazëvendësueshëm për çdo udhëtar.">
+            <div class="dest-overlay">
+              <h3>Paris, Francë</h3>
+              <p>Nga <strong>€449</strong></p>
+              <button class="btn-dest open-modal">Shiko më shumë</button>
+            </div>
+          </div>
+
+          <div class="dest-card" style="background-image: url('images/dest8.jpg')"
+            data-title="Barcelona, Spanjë"
+            data-price="€379"
+            data-desc="Barcelona është qyteti i Gaudi-t, plazheve mesdhetare dhe jetës së gjallë. Arkitektura unike, tapas dhe Nou Camp e bëjnë një destinacion të veçantë.">
+            <div class="dest-overlay">
+              <h3>Barcelona, Spanjë</h3>
+              <p>Nga <strong>€379</strong></p>
+              <button class="btn-dest open-modal">Shiko më shumë</button>
+            </div>
+          </div>
+
+          <div class="dest-card" style="background-image: url('images/dest9.jpg')"
+            data-title="Istanbul, Turqi"
+            data-price="€299"
+            data-desc="Istanbuli është ura midis Europës dhe Azisë. Hagia Sofia, Bazari i Madh dhe kuzhina e pasur turke e bëjnë një nga qytetet më interesante në botë.">
+            <div class="dest-overlay">
+              <h3>Istanbul, Turqi</h3>
+              <p>Nga <strong>€299</strong></p>
+              <button class="btn-dest open-modal">Shiko më shumë</button>
+            </div>
+          </div>
+
+          <div class="dest-card" style="background-image: url('images/dest10.jpg')"
+            data-title="Pragë, Çeki"
+            data-price="€379"
+            data-desc="Praga është qyteti i bajatëve mesjetare, urëve të vjetra dhe birrës së famshme. Arkitektura mahnitëse dhe jetëja e natës e bëjnë një destinacion unik europian.">
+            <div class="dest-overlay">
+              <h3>Pragë, Çeki</h3>
+              <p>Nga <strong>€379</strong></p>
+              <button class="btn-dest open-modal">Shiko më shumë</button>
+            </div>
+          </div>
+
+        </div>
+        <button class="slider-btn right" id="sliderRight">&#8594;</button>
       </div>
     </div>
-
-    <div class="dest-card" style="background-image: url('images/dest2.jpg')">
-      <div class="dest-overlay">
-        <h3>Rome, Itali</h3>
-        <p>Nga <strong>€350</strong></p>
-        <a href="#contact" class="btn-dest">Rezervo</a>
-      </div>
-    </div>
-
-    <div class="dest-card" style="background-image: url('images/dest3.jpg')">
-      <div class="dest-overlay">
-        <h3>Brasil</h3>
-        <p>Nga <strong>€899</strong></p>
-        <a href="#contact" class="btn-dest">Rezervo</a>
-      </div>
-    </div>
-
-    <div class="dest-card" style="background-image: url('images/dest4.jpg')">
-      <div class="dest-overlay">
-        <h3>Maldive</h3>
-        <p>Nga <strong>€999</strong></p>
-        <a href="#contact" class="btn-dest">Rezervo</a>
-      </div>
-    </div>
-
-    <div class="dest-card" style="background-image: url('images/dest5.jpg')">
-      <div class="dest-overlay">
-        <h3>Dubai, EAB</h3>
-        <p>Nga <strong>€799</strong></p>
-        <a href="#contact" class="btn-dest">Rezervo</a>
-      </div>
-    </div>
-
-    <div class="dest-card" style="background-image: url('images/dest6.jpg')">
-      <div class="dest-overlay">
-        <h3>Bali, Indonezi</h3>
-        <p>Nga <strong>€799</strong></p>
-        <a href="#contact" class="btn-dest">Rezervo</a>
-      </div>
-    </div>
-
-    <div class="dest-card" style="background-image: url('images/dest7.jpg')">
-      <div class="dest-overlay">
-        <h3>Paris, Francë</h3>
-        <p>Nga <strong>€449</strong></p>
-        <a href="#contact" class="btn-dest">Rezervo</a>
-      </div>
-    </div>
-
-    <div class="dest-card" style="background-image: url('images/dest8.jpg')">
-      <div class="dest-overlay">
-        <h3>Barcelona, Spanjë</h3>
-        <p>Nga <strong>€379</strong></p>
-        <a href="#contact" class="btn-dest">Rezervo</a>
-      </div>
-    </div>
-
-    <div class="dest-card" style="background-image: url('images/dest9.jpg')">
-      <div class="dest-overlay">
-        <h3>Istanbul, Turqi</h3>
-        <p>Nga <strong>€299</strong></p>
-        <a href="#contact" class="btn-dest">Rezervo</a>
-      </div>
-    </div>
-
-    <div class="dest-card" style="background-image: url('images/dest10.jpg')">
-      <div class="dest-overlay">
-        <h3>Prague, Czechia</h3>
-        <p>Nga <strong>€379</strong></p>
-        <a href="#contact" class="btn-dest">Rezervo</a>
-      </div>
-    </div>
-
-
-
-  </div>
-
-  <button class="slider-btn right" id="sliderRight">&#8594;</button>
-</div>
-      
   </section>
 
+  <!-- MODAL DESTINACIONI -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <button class="modal-close" id="modalClose">✕</button>
+      <div class="modal-img" id="modalImg"></div>
+      <div class="modal-body">
+        <h2 id="modalTitle"></h2>
+        <p class="modal-price" id="modalPrice"></p>
+        <p class="modal-desc" id="modalDesc"></p>
+        <a href="#contact" class="btn-primary" id="modalRezervo">Rezervo Tani</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
   <section class="contact" id="contact">
     <div class="container">
       <div class="section-header">
@@ -200,7 +234,6 @@
         <p>Gati për aventurën tuaj? Na tregoni ku dëshironi të shkoni!</p>
       </div>
       <div class="contact-grid">
-
         <div class="contact-info">
           <div class="contact-item">
             <span>📍</span>
@@ -223,47 +256,51 @@
         <form class="contact-form" id="contactForm">
           <div class="form-group">
             <label>Emri & Mbiemri</label>
-            <input type="text" placeholder="p.sh. Klarisa Shehu" required />
+            <input type="text" id="fname" placeholder="p.sh. Klarisa Shehu" required />
           </div>
           <div class="form-group">
             <label>Email</label>
-            <input type="email" placeholder="email@juaj.com" required />
+            <input type="email" id="femail" placeholder="email@juaj.com" required />
           </div>
           <div class="form-group">
             <label>Destinacioni</label>
-            <select>
+            <select id="fdest">
               <option value="">Zgjidhni destinacionin...</option>
               <option>Santorini, Greqi</option>
-              <option>Dubai, EAB</option>
+              <option>Romë, Itali</option>
+              <option>Brazil</option>
               <option>Maldive</option>
+              <option>Dubai, EAB</option>
+              <option>Bali, Indonezi</option>
+              <option>Paris, Francë</option>
+              <option>Barcelona, Spanjë</option>
               <option>Istanbul, Turqi</option>
+              <option>Pragë, Çeki</option>
             </select>
           </div>
           <div class="form-group">
             <label>Mesazhi</label>
-            <textarea rows="4" placeholder="Na tregoni më shumë..."></textarea>
+            <textarea id="fmsg" rows="4" placeholder="Na tregoni më shumë..."></textarea>
           </div>
           <button type="submit" class="btn-primary">Dërgo Kërkesën</button>
+          <div class="form-success" id="formSuccess">
+            ✅ Faleminderit! Do t'ju kontaktojmë së shpejti.
+          </div>
         </form>
-
       </div>
     </div>
   </section>
-</div>
-  </section>
 
-
-   <footer class="footer">
+  <!-- FOOTER -->
+  <footer class="footer">
     <div class="container">
       <div class="footer-grid">
-
         <div class="footer-brand">
           <a href="#" class="logo">
             <img src="logo-dark.svg" alt="Travelo" class="logo-img" />
           </a>
           <p>Bota është më e bukur kur e sheh nga afër. Lëre Travelo të bëhet udhërrëfyesi yt.</p>
         </div>
-
         <div class="footer-links">
           <h4>Navigim</h4>
           <ul>
@@ -273,7 +310,6 @@
             <li><a href="#contact">Kontakt</a></li>
           </ul>
         </div>
-
         <div class="footer-links">
           <h4>Shërbimet</h4>
           <ul>
@@ -285,7 +321,6 @@
             <li>Siguri Udhëtimi</li>
           </ul>
         </div>
-
         <div class="footer-links">
           <h4>Kontakt</h4>
           <ul>
@@ -293,18 +328,13 @@
             <li>✉️ info@travelo.al</li>
           </ul>
         </div>
-
       </div>
-
       <div class="footer-bottom">
         <p>© 2026 Travelo. Të gjitha të drejtat e rezervuara.</p>
       </div>
-
     </div>
   </footer>
 
-</body>
-  
- <script src="js/script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
