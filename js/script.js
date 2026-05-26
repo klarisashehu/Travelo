@@ -4,6 +4,69 @@ window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 50);
 });
 
+// ===== HERO SLIDER =====
+const heroSlides   = document.querySelectorAll('.hero-slide');
+const heroDots     = document.querySelectorAll('.hero-dot');
+const heroProgress = document.getElementById('heroProgressBar');
+const heroPrev     = document.getElementById('heroPrev');
+const heroNext     = document.getElementById('heroNext');
+
+let currentSlide = 0;
+let heroTimer;
+const SLIDE_DURATION = 5000; // 5 sekonda
+
+function goToSlide(index) {
+  // Hiq active nga i gjithë
+  heroSlides[currentSlide].classList.remove('active');
+  heroDots[currentSlide].classList.remove('active');
+
+  // Vendos indexin e ri
+  currentSlide = (index + heroSlides.length) % heroSlides.length;
+
+  heroSlides[currentSlide].classList.add('active');
+  heroDots[currentSlide].classList.add('active');
+
+  // Reset progress bar
+  heroProgress.style.transition = 'none';
+  heroProgress.style.width = '0%';
+  setTimeout(() => {
+    heroProgress.style.transition = `width ${SLIDE_DURATION}ms linear`;
+    heroProgress.style.width = '100%';
+  }, 50);
+}
+
+function nextSlide() { goToSlide(currentSlide + 1); }
+function prevSlide() { goToSlide(currentSlide - 1); }
+
+function startAutoPlay() {
+  heroTimer = setInterval(nextSlide, SLIDE_DURATION);
+}
+
+function resetAutoPlay() {
+  clearInterval(heroTimer);
+  startAutoPlay();
+}
+
+// Butonat e shigjetave
+heroNext.addEventListener('click', () => { nextSlide(); resetAutoPlay(); });
+heroPrev.addEventListener('click', () => { prevSlide(); resetAutoPlay(); });
+
+// Dots
+heroDots.forEach(dot => {
+  dot.addEventListener('click', () => {
+    goToSlide(+dot.dataset.index);
+    resetAutoPlay();
+  });
+});
+
+// Pauzo kur miu është mbi hero
+document.querySelector('.hero').addEventListener('mouseenter', () => clearInterval(heroTimer));
+document.querySelector('.hero').addEventListener('mouseleave', startAutoPlay);
+
+// Fillo
+goToSlide(0);
+startAutoPlay();
+
 // ===== CAROUSEL =====
 const track    = document.getElementById('destTrack');
 const btnLeft  = document.getElementById('sliderLeft');

@@ -8,6 +8,7 @@
 </head>
 <body>
 
+  
   <!-- NAVBAR -->
   <nav class="navbar" id="navbar">
     <div class="nav-container">
@@ -23,15 +24,77 @@
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <h1>Udhëto me <span>Zemër të Qetë</span></h1>
-      <p>"Bota është më e bukur kur e sheh nga afër."</p>
-      <a href="#contact" class="btn-primary">Eksploro Tani</a>
+
+ <!-- HERO -->
+<section class="hero" id="home">
+  
+  <!-- Slides -->
+  <div class="hero-slides">
+    <div class="hero-slide active" style="background-image: url('images/hero.jpg')"></div>
+    <div class="hero-slide" style="background-image: url('images/dest1.jpg')"></div>
+    <div class="hero-slide" style="background-image: url('images/dest4.jpg')"></div>
+    <div class="hero-slide" style="background-image: url('images/dest6.jpg')"></div>
+    <div class="hero-slide" style="background-image: url('images/dest7.jpg')"></div>
+  </div>
+
+  <div class="hero-overlay"></div>
+
+  <!-- Shigjeta Majtas -->
+  <button class="hero-arrow hero-arrow-left" id="heroPrev">&#8592;</button>
+
+  <!-- Përmbajtja -->
+  <div class="hero-content">
+    <p class="hero-subtitle">Mirësevini në Travelo</p>
+    <h1>Udhëto me <span>Zemër të Qetë</span></h1>
+    <p class="hero-quote">"Bota është më e bukur kur e sheh nga afër."</p>
+    <div class="hero-buttons">
+      <a href="#destinations" class="btn-primary">Eksploro Tani</a>
     </div>
-  </section>
+  </div>
+
+  <!-- Shigjeta Djathtas -->
+  <button class="hero-arrow hero-arrow-right" id="heroNext">&#8594;</button>
+
+  <!-- Dots -->
+  <div class="hero-dots" id="heroDots">
+    <span class="hero-dot active" data-index="0"></span>
+    <span class="hero-dot" data-index="1"></span>
+    <span class="hero-dot" data-index="2"></span>
+    <span class="hero-dot" data-index="3"></span>
+    <span class="hero-dot" data-index="4"></span>
+  </div>
+
+  <!-- Progress Bar -->
+  <div class="hero-progress">
+    <div class="hero-progress-bar" id="heroProgressBar"></div>
+  </div>
+
+</section>
+
+<!-- OFFERS BANNER -->
+<section id="offers">
+  <div class="offers-banner">
+    <div class="offer-text">
+      <div class="offer-eyebrow">⚡ Oferta të Kufizuara</div>
+      <div class="offer-title">Rezervo Tani,<br>Kursej Shumë</div>
+      <div class="offer-desc">Oferta sezionale me zbritje deri në 40% — disponueshme vetëm për rezervimet e bëra këtë muaj.</div>
+    </div>
+    <div class="offer-cards">
+      <div class="offer-card">
+        <span class="offer-discount">30%</span>
+        <span class="offer-type">Pushime Verore</span>
+      </div>
+      <div class="offer-card">
+        <span class="offer-discount">40%</span>
+        <span class="offer-type">City Break</span>
+      </div>
+      <div class="offer-card">
+        <span class="offer-discount">25%</span>
+        <span class="offer-type">Aventurë</span>
+      </div>
+    </div>
+  </div>
+</section>
 
   <!-- ABOUT -->
   <section class="about" id="about">
@@ -99,7 +162,9 @@
           <div class="dest-card" style="background-image: url('images/dest1.jpg')"
             data-title="Santorini, Greqi"
             data-price="€499"
-            data-desc="Santorini është një nga ishujt më romantikë të botës. Me shtëpitë e bardha, kupat blu dhe perëndimet magjike, është destinacioni perfekt për çifte dhe aventurierë.">
+            data-desc="Përjetoni bukurinë magjike të Santorinit, ishullit të famshëm me shtëpi të bardha, kupola blu dhe perëndime mahnitëse mbi detin Egje. 
+            Ky destinacion është perfekt për pushime romantike, aventura relaksuese dhe eksplorime me guida profesionale në fshatrat tradicionale dhe plazhet vullkanike. 
+            Paketa përfshin fluturim komod, akomodim luksoz dhe ture të organizuara për të shijuar çdo moment të udhëtimit tuaj.">
             <div class="dest-overlay">
               <h3>Santorini, Greqi</h3>
               <p>Nga <strong>€499</strong></p>
@@ -110,7 +175,9 @@
           <div class="dest-card" style="background-image: url('images/dest2.jpg')"
             data-title="Romë, Itali"
             data-price="€350"
-            data-desc="Roma është qyteti i historisë së pafund. Koloseu, Vatikani dhe udhët e ngushta të plota me restorantë e kafene e bëjnë një destinacion të paharrueshëm.">
+            data-desc="Zbuloni historinë dhe kulturën e pafundme të Romës, qytetit ku çdo rrugë fsheh monumente ikonike dhe atmosferë autentike italiane. 
+            Me guida turistike profesionale do të eksploroni Koloseun, Fontanën di Trevi dhe vendet më të famshme historike.
+             Paketa përfshin fluturim, akomodim modern dhe eksperienca të organizuara që e bëjnë udhëtimin tuaj të paharrueshëm.">
             <div class="dest-overlay">
               <h3>Romë, Itali</h3>
               <p>Nga <strong>€350</strong></p>
@@ -121,7 +188,9 @@
           <div class="dest-card" style="background-image: url('images/dest3.jpg')"
             data-title="Brazil"
             data-price="€899"
-            data-desc="Brazili ofron natyrë të mahnitshme, plazhe tropikale dhe karnaval të famshëm. Rio de Janeiro dhe pylli Amazon janë eksperienca që nuk harrohen kurrë.">
+            data-desc="Brazili ju pret me energji të pafundme, plazhe tropikale dhe aventurë unike. 
+            Nga ritmet e sambës deri tek natyra ekzotike dhe qytetet plot jetë, ky destinacion është ideal për ata që kërkojnë emocione dhe eksperienca të reja.
+             Me fluturim, akomodim cilësor dhe guida turistike për atraksionet më të njohura, do të shijoni një udhëtim plot ngjyra dhe kulturë..">
             <div class="dest-overlay">
               <h3>Brazil</h3>
               <p>Nga <strong>€899</strong></p>
@@ -198,7 +267,7 @@
           <div class="dest-card" style="background-image: url('images/dest10.jpg')"
             data-title="Pragë, Çeki"
             data-price="€379"
-            data-desc="Praga është qyteti i bajatëve mesjetare, urëve të vjetra dhe birrës së famshme. Arkitektura mahnitëse dhe jetëja e natës e bëjnë një destinacion unik europian.">
+            data-desc="Praga është qyteti i bajatëve mesjetare, urave të vjetra dhe birrës së famshme. Arkitektura mahnitëse dhe jeta e natës e bëjnë një destinacion unik europian.">
             <div class="dest-overlay">
               <h3>Pragë, Çeki</h3>
               <p>Nga <strong>€379</strong></p>
@@ -284,7 +353,7 @@
           </div>
           <button type="submit" class="btn-primary">Dërgo Kërkesën</button>
           <div class="form-success" id="formSuccess">
-            ✅ Faleminderit! Do t'ju kontaktojmë së shpejti.
+             Faleminderit! Do t'ju kontaktojmë së shpejti.
           </div>
         </form>
       </div>
