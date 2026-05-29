@@ -67,20 +67,8 @@ document.querySelector('.hero').addEventListener('mouseleave', startAutoPlay);
 goToSlide(0);
 startAutoPlay();
 
-// ===== CAROUSEL =====
-const track    = document.getElementById('destTrack');
-const btnLeft  = document.getElementById('sliderLeft');
-const btnRight = document.getElementById('sliderRight');
 
-btnRight.addEventListener('click', () => {
-  track.scrollBy({ left: 400, behavior: 'smooth' });
-});
-
-btnLeft.addEventListener('click', () => {
-  track.scrollBy({ left: -400, behavior: 'smooth' });
-});
-
-// ===== MODAL DESTINACIONIT =====
+/// ===== MODAL DESTINACIONIT =====
 const modalOverlay = document.getElementById('modalOverlay');
 const modalClose   = document.getElementById('modalClose');
 const modalImg     = document.getElementById('modalImg');
@@ -89,29 +77,35 @@ const modalPrice   = document.getElementById('modalPrice');
 const modalDesc    = document.getElementById('modalDesc');
 const modalRezervo = document.getElementById('modalRezervo');
 
-// Hap modalin kur klikohet "Shiko më shumë"
 document.querySelectorAll('.open-modal').forEach(btn => {
   btn.addEventListener('click', () => {
-    const card  = btn.closest('.dest-card');
+
+    const modalMore = document.getElementById('modalMore');
+    const card = btn.closest('.dest-card');
+
     const title = card.dataset.title;
     const price = card.dataset.price;
     const desc  = card.dataset.desc;
-    const img   = card.style.backgroundImage;
+    const img = card.querySelector('img').src;
+    const more = card.dataset.more;
 
-    modalImg.style.backgroundImage = img;
-    modalTitle.textContent          = title;
-    modalPrice.textContent          = 'Nga ' + price;
-    modalDesc.textContent           = desc;
-    modalRezervo.href               = '#contact';
+    modalImg.style.backgroundImage = `url(${img})`;
+    modalTitle.textContent = title;
+    modalPrice.textContent = 'Nga ' + price;
+    modalDesc.textContent = desc;
+    modalMore.textContent = more;
 
-    modalOverlay.classList.add('open');
+    modalRezervo.href = '#contact';
+
+    modalOverlay.classList.add('active');
+
     document.body.style.overflow = 'hidden';
   });
 });
 
-// Mbyll modalin
+// ===== Mbyll modalin =====
 function closeModal() {
-  modalOverlay.classList.remove('open');
+  modalOverlay.classList.remove('active');
   document.body.style.overflow = '';
 }
 
@@ -125,35 +119,97 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeModal();
 });
 
-modalRezervo.addEventListener('click', () => {
-  closeModal();
-});
+modalRezervo.addEventListener('click', closeModal);
 
+// ===== FILTER DESTINATIONS =====
+
+const filterButtons = document.querySelectorAll('.filter-btn');
+const destinationCards = document.querySelectorAll('.dest-card');
+
+filterButtons.forEach(button => {
+
+  button.addEventListener('click', () => {
+
+    // ACTIVE BUTTON
+    filterButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+
+    const filter = button.dataset.filter;
+
+    destinationCards.forEach(card => {
+
+      const category = card.dataset.category;
+
+      if (filter === 'all' || category === filter) {
+
+        card.style.display = 'block';
+
+      } else {
+
+        card.style.display = 'none';
+
+      }
+
+    });
+
+  });
+
+});
 // ===== FORM SUBMISSION =====
-const form        = document.getElementById('contactForm');
+
+const form = document.getElementById('contactForm');
 const formSuccess = document.getElementById('formSuccess');
+const formError = document.getElementById('formError');
 
 form.addEventListener('submit', (e) => {
+
   e.preventDefault();
 
   const name  = document.getElementById('fname').value.trim();
   const email = document.getElementById('femail').value.trim();
   const msg   = document.getElementById('fmsg').value.trim();
 
+  // reset messages
+  formError.classList.remove('show');
+  formSuccess.classList.remove('show');
+
+  // validation
   if (!name || !email || !msg) {
-    alert('Ju lutem plotësoni të gjitha fushat e detyrueshme!');
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+if (!emailPattern.test(email)) {
+
+  formError.textContent = 'Ju lutem shkruani një email të vlefshëm!';
+  formError.classList.add('show');
+
+  return;
+}
+
+    formError.textContent = 'Ju lutem plotësoni të gjitha të dhënat!';
+    formError.classList.add('show');
+
     return;
   }
 
   const btn = form.querySelector('button[type="submit"]');
-  btn.disabled    = true;
+
+  btn.disabled = true;
   btn.textContent = 'Duke dërguar...';
 
   setTimeout(() => {
+
     form.reset();
-    btn.disabled    = false;
+
+    btn.disabled = false;
     btn.textContent = 'Dërgo Kërkesën';
+
     formSuccess.classList.add('show');
-    setTimeout(() => formSuccess.classList.remove('show'), 5000);
+
+    setTimeout(() => {
+      formSuccess.classList.remove('show');
+    }, 5000);
+
   }, 1200);
+
 });
